@@ -2,8 +2,9 @@
   $codeAsHtml
 </div>
 
-<form action="http://codepen.io/pen/define" method="post" target="_blank">
-<input type="hidden" name="data" value='{"title": "Pen", "$lang": "$escCode"}'/>
+<!-- Note: The form won't submit in preview mode on Confluence -->
+<form action="https://codepen.io/pen/define" method="post" target="_blank">
+  <input type="hidden" name="data" value='{"title": "Pen", "$lang": "$escCode"}'/>
 
-<input type="submit" value="View on Codepen"/>
+  <input type="submit" value="View on Codepen"/>
 </form>

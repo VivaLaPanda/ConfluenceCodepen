@@ -8,6 +8,7 @@ import com.atlassian.confluence.util.velocity.VelocityUtils;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.apache.commons.lang.StringEscapeUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
@@ -29,10 +30,11 @@ public class CodepenGenerate implements Macro {
     String escapedCodeString = "";
     String langName = determineDataType(body, params);
     if (body != null) {
+      codeString = body;
+
       Document doc = Jsoup.parse(body);
-      codeString = doc.select("code").html();
-      System.out.println("body: " + body);
-      escapedCodeString = body.replace("\"", "\\\"");
+      String pureCode = doc.select("pre").first().html();
+      escapedCodeString = StringEscapeUtils.escapeHtml(pureCode);
     }
 
     Map<String, Object> context = MacroUtils.defaultVelocityContext();
