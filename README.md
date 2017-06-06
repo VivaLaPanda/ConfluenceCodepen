@@ -1,7 +1,7 @@
 ![keysight-banner-560x274.png](https://bitbucket.org/repo/kMMaq9R/images/227789766-keysight-banner-560x274.png)
 
 This repository is a plugin for easily making Codepen sandboxes of snippets in Confluence
-documentation.
+documentation, and was developed by Keysight Technologies.
 
 Keysight Technologies is an industry leader providing solutions in the area of
 electronic test and measurement.
