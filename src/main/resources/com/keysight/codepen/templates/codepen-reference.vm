@@ -1,0 +1,9 @@
+<div>
+  $codeAsHtml
+</div>
+
+<form action="http://codepen.io/pen/define" method="post" target="_blank">
+<input type="hidden" name="data" value='{"title": "Pen", "$lang": "$escCode"}'/>
+
+<input type="submit" value="View on Codepen"/>
+</form>

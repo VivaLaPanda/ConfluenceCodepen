@@ -1,0 +1,14 @@
+figure {
+  background: #ccc;
+  margin: 0;
+  padding: 1rem;
+}
+figcaption form {
+  display: inline-block;
+}
+
+.codepen-mover-button {
+  position: absolute;
+  bottom: 5px;
+  right: 8px;
+}

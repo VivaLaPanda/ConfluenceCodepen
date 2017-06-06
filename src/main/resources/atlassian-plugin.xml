@@ -1,0 +1,41 @@
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}"/>
+        <param name="plugin-icon">images/pluginIcon.png</param>
+        <param name="plugin-logo">images/pluginLogo.png</param>
+    </plugin-info>
+
+    <!-- add our i18n resource -->
+    <resource location="codepen" name="i18n" type="i18n"/>
+
+    <!-- add our web resources -->
+    <web-resource key="codepen-resources" name="codepen Web Resources">
+        <dependency>com.atlassian.auiplugin:ajs</dependency>
+        <dependency>com.atlassian.auiplugin:dialog2</dependency>
+
+        <resource location="/css/codepen.css" name="codepen.css" type="download"/>
+        <resource location="/js/codepen.js" name="codepen.js" type="download"/>
+        <resource location="/js/macro-help.js" name="macro-help.js" type="download"/>
+        <resource location="/images" name="images/" type="download"/>
+
+        <context>codepen</context>
+        <context>atl.general</context>
+        <context>macro-browser</context>
+        <context>preview</context>
+    </web-resource>
+    <xhtml-macro class="com.keysight.macro.codepen.CodepenGenerate" key='codepen-macro'
+      name="codepen">
+        <description key="codepen.macro.desc"/>
+        <category name="formatting"/>
+        <parameters>
+            <parameter name="DataType" type="string"/>
+        </parameters>
+    </xhtml-macro>
+
+    <rest key="codepen-rest-resource" name="Codepen Wrapper Rest Interface" path="/codepen"
+      version="1.0">
+        <description>This is a rest resource to provide macro documentation.</description>
+    </rest>
+</atlassian-plugin>
