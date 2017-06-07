@@ -18,6 +18,7 @@
   <description>This is the com.keysight:codepen plugin for Atlassian Confluence.</description>
   <packaging>atlassian-plugin</packaging>
 
+  <!-- Atlassian/Confluence Dependencies -->
   <dependencies>
     <dependency>
       <groupId>com.atlassian.plugins.rest</groupId>
@@ -65,6 +66,7 @@
       <version>1.10.2</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/commons-lang/commons-lang -->
+    <!-- Used for string escaping -->
     <dependency>
       <groupId>commons-lang</groupId>
       <artifactId>commons-lang</artifactId>

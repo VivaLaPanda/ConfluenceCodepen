@@ -16,6 +16,7 @@ import javax.ws.rs.core.Response;
 @Path("/")
 @Scanned
 public class RestService {
+
   @ComponentImport
   private final SettingsManager settingsManager;
   @ComponentImport
@@ -34,7 +35,7 @@ public class RestService {
   @Produces({MediaType.APPLICATION_JSON})
   @Consumes({MediaType.APPLICATION_JSON})
   public Response codepenWrapperHelp() {
-    String title = "codepen Wrapper";
+    String title = "Codepen Wrapper";
     String bodyTemplate = "/com/keysight/codepen/templates/codepen-help.vm";
 
     return getMacroHelp(title, bodyTemplate);

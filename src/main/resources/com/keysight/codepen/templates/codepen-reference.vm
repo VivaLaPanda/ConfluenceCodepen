@@ -1,10 +1,16 @@
-<div>
-  $codeAsHtml
+<div class="snippet-code">
+  <div>
+    $codeAsHtml
+  </div>
+
+  <!-- Note: The form won't submit in preview mode on Confluence -->
+  <form action="https://codepen.io/pen/define" method="post" target="_blank">
+    <input
+      type="hidden"
+      name="data"
+      value='{"title": "Pen", "css": "$cssCode", "html": "$htmlCode", "js": "$jsCode"}'
+    />
+
+    <input type="submit" value="Run on Codepen" class="aui-button"/>
+  </form>
 </div>
-
-<!-- Note: The form won't submit in preview mode on Confluence -->
-<form action="https://codepen.io/pen/define" method="post" target="_blank">
-  <input type="hidden" name="data" value='{"title": "Pen", "$lang": "$escCode"}'/>
-
-  <input type="submit" value="View on Codepen"/>
-</form>

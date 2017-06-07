@@ -29,9 +29,6 @@
       name="codepen">
         <description key="codepen.macro.desc"/>
         <category name="formatting"/>
-        <parameters>
-            <parameter name="DataType" type="string"/>
-        </parameters>
     </xhtml-macro>
 
     <rest key="codepen-rest-resource" name="Codepen Wrapper Rest Interface" path="/codepen"
