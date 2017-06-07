@@ -6,43 +6,47 @@ import com.atlassian.confluence.macro.MacroExecutionException;
 import com.atlassian.confluence.renderer.radeox.macros.MacroUtils;
 import com.atlassian.confluence.util.velocity.VelocityUtils;
 import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
 public class CodepenGenerate implements Macro {
   // Enum and helper that defines data types that codepen understands
-  public enum validDatatype {
-    html, js, css
-  }
-  private <E extends Enum<E>> boolean isInEnum(String value, Class<E> enumClass) {
-    for (E e : enumClass.getEnumConstants()) {
-      if(e.name().equals(value)) { return true; }
-    }
-    return false;
-  }
 
   public String execute(Map<String, String> params, String body,
       ConversionContext conversionContext) throws MacroExecutionException {
-    String codeString = "";
-    String escapedCodeString = "";
-    String langName = determineDataType(body, params);
+    String codeString = ""; // The text to be printed in Confluence
+    String cssCode = "";
+    String htmlCode = "";
+    String jsCode = "";
+    System.out.println("Body: " + body);
+
+    // Extract all of the needed info from the body.
     if (body != null) {
       codeString = body;
 
+      // Jsoup parsing:
+      // Translates to grab all pre tags with a data-syntaxhighlighter-params attribute that is
+      // equal to a value starting in brush: [whateverlanguage];
+      // The selector grabs the first matching element, and stores it's html body after escaping it
+      // We don't have a css escaper, and the html one works fine for css.
       Document doc = Jsoup.parse(body);
-      String pureCode = doc.select("pre").first().html();
-      escapedCodeString = StringEscapeUtils.escapeHtml(pureCode);
+      cssCode = StringEscapeUtils.escapeHtml(
+          doc.select("pre[data-syntaxhighlighter-params^=brush: css;]").first().html()
+      );
+      htmlCode = doc.select("pre[data-syntaxhighlighter-params^=brush: xml;]").first().html();
+      jsCode = StringEscapeUtils.escapeJavaScript(
+          doc.select("pre[data-syntaxhighlighter-params^=brush: js;]").first().html()
+      );
     }
 
     Map<String, Object> context = MacroUtils.defaultVelocityContext();
     // Important note - for velocity to correctly render, 'html' a the end of the variable is
     // necessary. https://developer.atlassian.com/jiradev/jira-platform/jira-architecture/jira-templates-and-jsps/html-escaping-for-velocity-templates
     context.put("codeAsHtml", codeString);
-    context.put("escCode", escapedCodeString);
-    context.put("lang", langName);
+    context.put("cssCode", cssCode);
+    context.put("htmlCode", htmlCode);
+    context.put("jsCode", jsCode);
     return VelocityUtils
         .getRenderedTemplate("/com/keysight/codepen/templates/codepen-reference.vm", context);
   }
@@ -53,32 +57,5 @@ public class CodepenGenerate implements Macro {
 
   public OutputType getOutputType() {
     return OutputType.BLOCK;
-  }
-
-
-  /**
-   * Decides on the datatype using the rule:
-   * If user defined one, use that
-   * else try to parse it from a codeblock we wrap
-   * else default to html
-   */
-  private String determineDataType(String body, Map<String, String> params) {
-    String langName = "";
-    if (params.get("DataType") != null) {
-      langName = params.get("DataType");
-    } else {
-      Pattern pattern = Pattern.compile("(?<=brush: ).*?(?=;)");
-      Matcher matcher = pattern.matcher(body);
-      boolean fullMatch = matcher.matches();
-      if (matcher.groupCount() == 1 && !fullMatch) {
-        langName = matcher.group(1);
-      }
-    }
-
-    if (!isInEnum(langName, validDatatype.class)) {
-      langName = "html";
-    }
-
-    return langName;
   }
 }
