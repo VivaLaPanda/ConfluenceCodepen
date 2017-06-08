@@ -9,6 +9,7 @@ import java.util.Map;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 
 public class CodepenGenerate implements Macro {
   // Enum and helper that defines data types that codepen understands
@@ -31,13 +32,11 @@ public class CodepenGenerate implements Macro {
       // The selector grabs the first matching element, and stores it's html body after escaping it
       // We don't have a css escaper, and the html one works fine for css.
       Document doc = Jsoup.parse(body);
-      cssCode = StringEscapeUtils.escapeHtml(
-          doc.select("pre[data-syntaxhighlighter-params^=brush: css;]").first().html()
-      );
-      htmlCode = doc.select("pre[data-syntaxhighlighter-params^=brush: xml;]").first().html();
-      jsCode = StringEscapeUtils.escapeJavaScript(
-          doc.select("pre[data-syntaxhighlighter-params^=brush: js;]").first().html()
-      );
+      cssCode = StringEscapeUtils.escapeHtml(safeSelect(doc, "css"));
+      htmlCode = StringEscapeUtils.unescapeHtml(safeSelect(doc, "xml"))
+          .replaceAll("\"", "&quot;")
+          .replaceAll("\'", "&apos;");
+      jsCode = StringEscapeUtils.escapeJavaScript(safeSelect(doc, "js"));
     }
 
     Map<String, Object> context = MacroUtils.defaultVelocityContext();
@@ -49,6 +48,15 @@ public class CodepenGenerate implements Macro {
     context.put("jsCode", jsCode);
     return VelocityUtils
         .getRenderedTemplate("/com/keysight/codepen/templates/codepen-reference.vm", context);
+  }
+
+  private String safeSelect(Document doc, String language) {
+    Element elem = doc.select("pre[data-syntaxhighlighter-params^=brush: "+language+";]").first();
+    if (elem != null) {
+      return elem.html();
+    }
+
+    return "";
   }
 
   public BodyType getBodyType() {

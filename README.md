@@ -48,66 +48,37 @@ To use the macro, simply place it down. Within the macro body place macros with 
 
 I will use `{macro}{/macro}` to indicate a macro and it's body. `{macro\}` is a macro with no body.
 
-###### Normal Use Case
+##### Normal Use Case
 
-    --Input--
-    {codepen}
-      {code:js}
-        ...
-      {/code:js}
-      {code:html}
-        ...
-      {/code:html}
-      {code:css}
-        ...
-      {/code:css}
-    {/codepen}
-&nbsp;
+###### Input
+![Input](http://i.imgur.com/G2x564i.png)
 
-    --Output--
-    Codpen with all 3 languages and Confluence page with all 3 code blocks
+###### Confluence Output
+![Confluence Output](http://i.imgur.com/4LDMtMa.png)
 
-###### Ommitting Blocks
-
-    --Input--
-    {codepen}
-      {code:js}
-        ...
-      {/code:js}
-      {code:html}
-       ...
-      {/code:html}
-    {/codepen}
-
-&nbsp;
-
-    --Output--
-    Codpen with only js and html prefilled, and 2 code blocks on confluence page.
-
-###### Extra Blocks
+###### Resulting Codepen
+![Resulting Codepen](http://i.imgur.com/5TPKuqY.png)
 
 
-    --Input--
-     {codepen}
-       {code:js}
-         ...
-       {/code:js}
-       {code:html}
-         ...
-       {/code:html}
-       {code:css}
-         ...
-       {/code:css}
-       {code:css}
-         ...
-       {/code:css}
-       {code:xml}
-         ...
-       {/code:xml}
-     {/codepen}
+##### Ommitting Blocks
 
-&nbsp;
+###### Input
+![Input](http://i.imgur.com/8Zm7n2W.png)
 
-    --Output--
-    Codpen with js, css, and html prefilled, and 5 code blocks on confluence. Only the first css block
-    will be used in codepen.
+###### Confluence Output
+![Confluence Output](http://i.imgur.com/3PeCjks.png)
+
+###### Resulting Codepen
+![Resulting Codepen](http://i.imgur.com/kdvillr.png)
+
+
+##### Extra Blocks
+
+###### Input
+![Input](http://i.imgur.com/tCc8Cl2.png)
+
+###### Confluence Output
+![Confluence Output](http://i.imgur.com/J7HvGlb.png)
+
+###### Resulting Codepen
+![Resulting Codepen](http://i.imgur.com/2YjAIoN.png)
