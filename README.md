@@ -6,6 +6,7 @@ This repository is a plugin for easily making Codepen sandboxes of snippets in C
 documentation, and was developed by Adrian Smith.
 
 This code relies on several external libraries:
+
 * [Jsoup](https://jsoup.org/) - A great library for JQuery style HTML processing in Java
 
 * [Atlassian SDK](https://developer.atlassian.com/docs/getting-started/downloads) - Used to interact with Confluence

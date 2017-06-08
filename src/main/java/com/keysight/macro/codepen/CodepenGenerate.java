@@ -20,7 +20,6 @@ public class CodepenGenerate implements Macro {
     String cssCode = "";
     String htmlCode = "";
     String jsCode = "";
-    System.out.println("Body: " + body);
 
     // Extract all of the needed info from the body.
     if (body != null) {
