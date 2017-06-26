@@ -8,10 +8,10 @@
     </plugin-info>
 
     <!-- add our i18n resource -->
-    <resource location="codepen" name="i18n" type="i18n"/>
+    <resource location="/io/smithdev/codepen/i18n/codepen" name="codepen" type="i18n"/>
 
     <!-- add our web resources -->
-    <web-resource key="codepen-resources" name="codepen Web Resources">
+    <web-resource key="codepen-resources" name="Codepen Web Resources">
         <dependency>com.atlassian.auiplugin:ajs</dependency>
         <dependency>com.atlassian.auiplugin:dialog2</dependency>
 
@@ -25,13 +25,10 @@
         <context>macro-browser</context>
         <context>preview</context>
     </web-resource>
-    <xhtml-macro class="com.keysight.macro.codepen.CodepenGenerate" key='codepen-macro'
+    <xhtml-macro class="io.smithdev.macro.codepen.CodepenGenerate" key='codepen-macro'
       name="codepen">
         <description key="codepen.macro.desc"/>
         <category name="formatting"/>
-        <parameters>
-            <parameter name="DataType" type="string"/>
-        </parameters>
     </xhtml-macro>
 
     <rest key="codepen-rest-resource" name="Codepen Wrapper Rest Interface" path="/codepen"

@@ -1,4 +1,4 @@
-package com.keysight.macro.codepen.rest;
+package io.smithdev.macro.codepen.rest;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

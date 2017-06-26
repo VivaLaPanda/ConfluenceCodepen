@@ -12,3 +12,8 @@ figcaption form {
   bottom: 5px;
   right: 8px;
 }
+
+.snippet-code {
+    border: 1px solid #e4e6e8;
+    padding: 10px;
+}
