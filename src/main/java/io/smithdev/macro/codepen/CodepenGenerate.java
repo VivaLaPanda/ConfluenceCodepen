@@ -1,4 +1,4 @@
-package com.keysight.macro.codepen;
+package io.smithdev.macro.codepen;
 
 import com.atlassian.confluence.content.render.xhtml.ConversionContext;
 import com.atlassian.confluence.macro.Macro;
@@ -32,6 +32,9 @@ public class CodepenGenerate implements Macro {
       // We don't have a css escaper, and the html one works fine for css.
       Document doc = Jsoup.parse(body);
       cssCode = StringEscapeUtils.escapeHtml(safeSelect(doc, "css"));
+      // Weirdness here:
+      // Confluence itself escapes the html, so have to unescape it, but then go through and
+      // cleanse any quotes to make sure the form object is still valid.
       htmlCode = StringEscapeUtils.unescapeHtml(safeSelect(doc, "xml"))
           .replaceAll("\"", "&quot;")
           .replaceAll("\'", "&apos;");
@@ -46,11 +49,12 @@ public class CodepenGenerate implements Macro {
     context.put("htmlCode", htmlCode);
     context.put("jsCode", jsCode);
     return VelocityUtils
-        .getRenderedTemplate("/com/keysight/codepen/templates/codepen-reference.vm", context);
+        .getRenderedTemplate("/io/smithdev/codepen/templates/codepen-reference.vm", context);
   }
 
   private String safeSelect(Document doc, String language) {
-    Element elem = doc.select("pre[data-syntaxhighlighter-params^=brush: "+language+";]").first();
+    Element elem = doc.select("pre[data-syntaxhighlighter-params^=brush: " + language + ";]")
+        .first();
     if (elem != null) {
       return elem.html();
     }

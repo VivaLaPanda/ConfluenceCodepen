@@ -5,17 +5,17 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.keysight</groupId>
+  <groupId>io.smithdev</groupId>
   <artifactId>codepen</artifactId>
   <version>1.0.0</version>
 
   <organization>
-    <name>Keysight Technologies</name>
-    <url>http://www.keysight.com</url>
+    <name>Adrian Smith</name>
+    <url>http://www.smithdev.io</url>
   </organization>
 
   <name>codepen</name>
-  <description>This is the com.keysight:codepen plugin for Atlassian Confluence.</description>
+  <description>This is the Codepen plugin by Adrian Smith for Atlassian Confluence.</description>
   <packaging>atlassian-plugin</packaging>
 
   <!-- Atlassian/Confluence Dependencies -->
@@ -113,7 +113,6 @@
 
             <!-- Add package to export here -->
             <Export-Package>
-              com.keysight.api,
             </Export-Package>
 
             <!-- Add package import here -->

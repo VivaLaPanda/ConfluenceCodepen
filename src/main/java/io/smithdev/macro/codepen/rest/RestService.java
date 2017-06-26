@@ -1,4 +1,4 @@
-package com.keysight.macro.codepen.rest;
+package io.smithdev.macro.codepen.rest;
 
 import com.atlassian.confluence.plugin.services.VelocityHelperService;
 import com.atlassian.confluence.setup.settings.SettingsManager;
@@ -36,15 +36,15 @@ public class RestService {
   @Consumes({MediaType.APPLICATION_JSON})
   public Response codepenWrapperHelp() {
     String title = "Codepen Wrapper";
-    String bodyTemplate = "/com/keysight/codepen/templates/codepen-help.vm";
+    String bodyTemplate = "/io/smithdev/codepen/templates/codepen-help.vm";
 
     return getMacroHelp(title, bodyTemplate);
   }
 
   private Response getMacroHelp(String title, String bodyTemplate) {
     StringBuilder html = new StringBuilder();
-    String headerTemplate = "/com/keysight/codepen/templates/help-header.vm";
-    String footerTemplate = "/com/keysight/codepen/templates/help-footer.vm";
+    String headerTemplate = "/io/smithdev/codepen/templates/help-header.vm";
+    String footerTemplate = "/io/smithdev/codepen/templates/help-footer.vm";
 
     Map<String, Object> velocityContext = velocityHelperService.createDefaultVelocityContext();
     velocityContext.put("title", title);
