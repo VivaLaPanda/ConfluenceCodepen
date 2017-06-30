@@ -23,34 +23,34 @@
   <h4>Normal Use Case (Three Blocks)</h4>
 
   <h5>Confluence Edit View</h5>
-  <img alt="Three Code Block Codepen Macro in the Confluence Editor"  src="$images/three-blocks-editor.png" />
+  <img alt="Three Code Block Codepen Macro in the Confluence Editor"  src="$images/docs/three-blocks-editor.png" />
 
   <h5>Confluence Page View</h5>
-  <img alt="Three Code Block Codepen Macro in the Confluence Viewer"  src="$images/three-blocks-view.png" />
+  <img alt="Three Code Block Codepen Macro in the Confluence Viewer"  src="$images/docs/three-blocks-view.png" />
 
   <h5>Codepen View</h5>
-  <img alt="Three Code Block Codepen Macro in Codepen"  src="$images/three-blocks-codepen.png" />
+  <img alt="Three Code Block Codepen Macro in Codepen"  src="$images/docs/three-blocks-codepen.png" />
 
   <h4>Ommitting Blocks</h4>
 
   <h5>Confluence Edit View</h5>
-  <img alt="Two Code Block Codepen Macro in the Confluence Editor"  src="$images/two-blocks-editor.png" />
+  <img alt="Two Code Block Codepen Macro in the Confluence Editor"  src="$images/docs/two-blocks-editor.png" />
 
   <h5>Confluence Page View</h5>
-  <img alt="Two Code Block Codepen Macro in the Confluence Viewer"  src="$images/two-blocks-view.png" />
+  <img alt="Two Code Block Codepen Macro in the Confluence Viewer"  src="$images/docs/two-blocks-view.png" />
 
   <h5>Codepen View</h5>
-  <img alt="Two Code Block Codepen Macro in Codepen"  src="$images/two-blocks-codepen.png" />
+  <img alt="Two Code Block Codepen Macro in Codepen"  src="$images/docs/two-blocks-codepen.png" />
 
   <h4>Extra Blocks</h4>
 
   <h5>Confluence Edit View</h5>
-  <img alt="Extra Code Block Codepen Macro in the Confluence Editor"  src="$images/extra-blocks-editor.png" />
+  <img alt="Extra Code Block Codepen Macro in the Confluence Editor"  src="$images/docs/extra-blocks-editor.png" />
 
   <h5>Confluence Page View</h5>
-  <img alt="Extra Code Block Codepen Macro in the Confluence Viewer"  src="$images/extra-blocks-view.png" />
+  <img alt="Extra Code Block Codepen Macro in the Confluence Viewer"  src="$images/docs/extra-blocks-view.png" />
 
   <h5>Codepen View</h5>
-  <img alt="Extra Code Block Codepen Macro in Codepen"  src="$images/extra-blocks-codepen.png" />
+  <img alt="Extra Code Block Codepen Macro in Codepen"  src="$images/docs/extra-blocks-codepen.png" />
 
 </div>

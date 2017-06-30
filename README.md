@@ -54,34 +54,34 @@ if you do not include one of the code macros the codepen macro will simply use t
 #### Normal Use Case
 
 ###### Input
-![Input](http://i.imgur.com/G2x564i.png)
+![Input](./src/main/resources/images/docs/three-blocks-editor.png)
 
 ###### Confluence Output
-![Confluence Output](http://i.imgur.com/4LDMtMa.png)
+![Input](./src/main/resources/images/docs/three-blocks-view.png)
 
 ###### Resulting Codepen
-![Resulting Codepen](http://i.imgur.com/5TPKuqY.png)
+![Input](./src/main/resources/images/docs/three-blocks-codepen.png)
 
 
-#### Ommitting Blocks
+#### Omitting Blocks
 
 ###### Input
-![Input](http://i.imgur.com/8Zm7n2W.png)
+![Input](./src/main/resources/images/docs/two-blocks-editor.png)
 
 ###### Confluence Output
-![Confluence Output](http://i.imgur.com/3PeCjks.png)
+![Input](./src/main/resources/images/docs/two-blocks-view.png)
 
 ###### Resulting Codepen
-![Resulting Codepen](http://i.imgur.com/kdvillr.png)
+![Input](./src/main/resources/images/docs/two-blocks-codepen.png)
 
 
 #### Extra Blocks
 
 ###### Input
-![Input](http://i.imgur.com/tCc8Cl2.png)
+![Input](./src/main/resources/images/docs/extra-blocks-editor.png)
 
 ###### Confluence Output
-![Confluence Output](http://i.imgur.com/J7HvGlb.png)
+![Input](./src/main/resources/images/docs/extra-blocks-view.png)
 
 ###### Resulting Codepen
-![Resulting Codepen](http://i.imgur.com/2YjAIoN.png)
+![Input](./src/main/resources/images/docs/extra-blocks-codepen.png)
