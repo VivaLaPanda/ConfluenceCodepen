@@ -49,7 +49,7 @@ As the **Codepen** macro is looking for the first HTML, CSS and Javascript **Cod
 macros, the language for those instances must be explicitly specified in the **Code**
 macro (or that block will be ignored).
 
-if you do not include one of the code macros the codepen macro will simply use the blocks provided. **Huh??**
+if you omit one of the code macros the codepen macro will simply use the 1 or 2 blocks provided, and the codepen page generated will not have code for those languages.
  
 #### Normal Use Case
 
